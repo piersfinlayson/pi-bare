@@ -48,3 +48,4 @@ See the list of samples:
 ls $PREFIX/circle/sample/
 ```
 
+The samples typically don't output anything on the UART, so make sure you have a monitor plugged in.
