@@ -29,7 +29,7 @@ cd $PREFIX
 git clone https://github.com/rsta2/circle
 ```
 
-Now get this repo and put hte script in the circle directory
+Now get this repo and put the script in the circle directory
 ```
 cd $PREFIX
 git clone https://github.com/piersfinlayson/pi-bare
