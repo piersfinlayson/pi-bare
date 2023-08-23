@@ -36,16 +36,31 @@ git clone https://github.com/piersfinlayson/pi-bare
 cp $PREFIX/pi-bare/circle/makesd.sh $PREFIX/circle/
 ```
 
-You can now build one of the samples and write it to an SD card.  Install the SD card and get the device e.g. /dev/sdh.  Then:
+You can now build one of the samples and write it to an SD card.  To see a list of samples
+```
+ls $PREFIX/circle/sample/
+```
+
+Install the SD card and get the device e.g. /dev/sdh.
+```
+sudo dmesg |grep "Attached"
+```
+
+Sample output:
+```
+[33031.682176] sd 5:0:0:0: Attached scsi generic sg7 type 0
+[33031.921263] sd 5:0:0:0: [sdh] Attached SCSI removable disk
+```
+This SD card is /dev/sdh.
+
+Then:
 ```
 cd $PREFIX/circle
 ./makesd.sh 64 /dev/sdh 17-fractal
 ```
-(This builds a 64-bit version, for a PI 3.)
 
-See the list of samples:
-```
-ls $PREFIX/circle/sample/
-```
+This builds a 64-bit version, for a PI 3.
+
+Now insert the card into a Pi 3 (A+ or B+ are both fine) and power it up.
 
 The samples typically don't output anything on the UART, so make sure you have a monitor plugged in.
